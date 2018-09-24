@@ -396,7 +396,7 @@ def warp_image(im, flow):
     warp = np.zeros((image_height, image_width, im.shape[2]))
     for i in range(im.shape[2]):
         channel = im[:, :, i]
-        plt.imshow(channel, cmap='gray')
+        # plt.imshow(channel, cmap='gray')
         values = channel.reshape(n, 1)
         new_channel = interpolate.griddata(points, values, xi, method='cubic')
         new_channel = np.reshape(new_channel, [flow_height, flow_width])

@@ -383,7 +383,7 @@ def warp_image(im, flow):
     flow_width = flow.shape[1]
     n = image_height * image_width
     (iy, ix) = np.mgrid[0:image_height, 0:image_width]
-    (fy, fx) = np.mgrid[0:flow_height, 0:flow_width]
+    (fy, fx) = np.mgrid[0:flow_height, 0:flow_width].astype(np.float32)
     fx += flow[:,:,0]
     fy += flow[:,:,1]
     mask = np.logical_or(fx <0 , fx > flow_width)

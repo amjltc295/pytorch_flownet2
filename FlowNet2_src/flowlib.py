@@ -9,6 +9,8 @@
 """
 import png
 import numpy as np
+import matplotlib
+matplotlib.use("Agg")  # NOQA
 import matplotlib.colors as cl
 import matplotlib.pyplot as plt
 from PIL import Image
